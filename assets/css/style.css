@@ -1,0 +1,613 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --pokedex-red: #d90000;
+    --pokedex-frame-black: #1f1f1f;
+    --pokedex-screen-back: #3c3c3c;
+    --pokedex-screen-light: #f0f0f0; 
+    --pokedex-text-color: #1a1a1a;
+    --pokedex-accent-blue: #007bff;
+    --pokedex-green-btn: #4db6ac;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #2c3e50;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.btn-verde-grande {
+    width: 140px;
+    height: 70px;
+    background-color: var(--pokedex-green-btn); 
+    border-radius: 15px;
+    border: 5px solid var(--pokedex-frame-black);
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.5);
+    color: #000; 
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn-verde-grande:active {
+    transform: translateY(5px);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.5); 
+}
+
+.container-apresentacao {
+    width: 95%;
+    max-width: 1100px; 
+    min-height: 650px; 
+    max-height: 700px;
+    background-color: var(--pokedex-red); 
+    border: 8px solid var(--pokedex-frame-black); 
+    border-radius: 40px; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7); 
+    display: flex;
+    position: relative;
+    padding: 30px; 
+    gap: 30px;
+    overflow: hidden; 
+}
+
+.container-apresentacao::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    background-color: var(--pokedex-frame-black);
+    border-radius: 8px;
+    z-index: 10;
+}
+
+.main-header {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 20;
+    padding-bottom: 20px;
+}
+
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 20px;
+    width: 60px; 
+    height: 60px; 
+    background-color: var(--pokedex-accent-blue);
+    border-radius: 50%;
+    border: 5px solid var(--pokedex-screen-light);
+}
+
+
+.visor-esquerdo {
+    height: 350px; 
+    background-color: var(--pokedex-screen-back);
+    border: 5px solid var(--pokedex-frame-black);
+    border-radius: 15px;
+    margin-top: 80px; 
+    padding: 40px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--pokedex-screen-light);
+}
+
+.visor-esquerdo h1 {
+    font-size: 4.5em; 
+    margin-bottom: 20px;
+    color: var(--pokedex-screen-light);
+}
+
+.visor-esquerdo .btn-start-visivel {
+    padding: 15px 40px; 
+    font-size: 1.2em;
+    border: 4px solid var(--pokedex-frame-black);
+    box-shadow: 0 5px 0 var(--pokedex-frame-black); 
+}
+
+.controles-esquerdo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 40px;
+}
+
+.d-pad {
+    width: 110px; 
+    height: 110px;
+    background-color: #444;
+    border-radius: 10px;
+    position: relative;
+    border: 5px solid var(--pokedex-frame-black);
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.d-pad::before { width: 100%; height: 25px; top: 50%; transform: translateY(-50%); }
+.d-pad::after { height: 100%; width: 25px; left: 50%; transform: translateX(-50%); }
+
+.btn-verde-grande {
+    width: 140px; 
+    height: 70px;
+    background-color: var(--pokedex-green-btn);
+    border-radius: 15px;
+    border: 5px solid var(--pokedex-frame-black);
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.apresentacao-grupo {
+    flex: 1;
+    background-color: var(--pokedex-frame-black);
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 20;
+}
+
+.visor-direito-conteudo {
+    background-color: var(--pokedex-screen-light);
+    padding: 25px;
+    border-radius: 10px;
+    height: 100%;
+    color: var(--pokedex-text-color);
+}
+
+.subtitle-display {
+    font-size: 1.8em; 
+    margin-bottom: 25px;
+    border-bottom: 5px solid var(--pokedex-red);
+    padding-bottom: 10px;
+}
+
+.integrantes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; 
+    margin-top: 20px;
+}
+
+.integrante-card {
+    padding: 20px 15px;
+    border-radius: 10px;
+    border: 3px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.integrante-card img {
+    width: 100px; 
+    height: 100px;
+    border: 5px solid var(--pokedex-accent-blue);
+    margin: 0 auto 10px;
+}
+
+.integrante-card h3 {
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+
+.botoes-inferiores-direito {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+
+.botoes-inferiores-direito div {
+    width: 110px; 
+    height: 55px;
+    background-color: #222;
+    border-radius: 10px;
+    border: 5px solid var(--pokedex-frame-black);
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #2c3e50;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container-apresentacao {
+    width: 95%;
+    max-width: 1100px;
+    min-height: 650px;
+    max-height: 700px;
+    background-color: #d90000; 
+    border: 8px solid #1f1f1f; 
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7); 
+    display: flex;
+    position: relative;
+    padding: 30px;
+    gap: 30px;
+    overflow: hidden;
+}
+
+.container-apresentacao::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    height: 100%;
+    width: 40px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    z-index: 10;
+}
+
+.main-header {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 20;
+    padding-bottom: 20px;
+}
+
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff; 
+    border-radius: 50%;
+    border: 5px solid #f0f0f0;
+}
+
+.visor-esquerdo {
+    height: 350px;
+    background-color: #3c3c3c;
+    border: 5px solid #1f1f1f;
+    border-radius: 15px;
+    margin-top: 80px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f0f0f0;
+    overflow: hidden;
+}
+
+.visor-esquerdo h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+.mensagem-introducao {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.instrucao-professor {
+    font-size: 0.9rem;
+    color: #ffd700; 
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    width: 90%;
+    line-height: 1.4;
+}
+
+.visor-esquerdo .btn-start-visivel {
+    padding: 10px 25px;
+    font-size: 1rem;
+    border: 3px solid #1f1f1f;
+    box-shadow: 0 4px 0 #1f1f1f;
+    background-color: #4db6ac; 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+}
+
+.controles-esquerdo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 40px;
+}
+
+.d-pad {
+    width: 110px;
+    height: 110px;
+    background-color: #444;
+    border-radius: 10px;
+    position: relative;
+    border: 5px solid #1f1f1f;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.d-pad::before {
+    content: '';
+    position: absolute;
+    width: 100%; height: 25px;
+    top: 50%; transform: translateY(-50%);
+    background: #1f1f1f;
+}
+.d-pad::after {
+    content: '';
+    position: absolute;
+    height: 100%; width: 25px;
+    left: 50%; transform: translateX(-50%);
+    background: #1f1f1f;
+}
+
+.btn-verde-grande {
+    width: 140px;
+    height: 70px;
+    background-color: #4db6ac;
+    border-radius: 15px;
+    border: 5px solid #1f1f1f;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.apresentacao-grupo {
+    flex: 1;
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 20;
+}
+
+.visor-direito-conteudo {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    height: 100%;
+    color: #1a1a1a;
+    overflow-y: auto;
+}
+
+.subtitle-display {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    border-bottom: 4px solid #d90000;
+    padding-bottom: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.lista-categorias {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.lista-categorias li {
+    margin-bottom: 10px;
+}
+
+.lista-categorias a {
+    font-size: 1rem;
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    border-left: 4px solid transparent;
+}
+
+.tipo-eletrico a { border-left-color: #f7d02c; }
+.tipo-dragao a { border-left-color: #6f35fc; }
+.tipo-voador a { border-left-color: #a98ff3; }
+.tipo-dark a { border-left-color: #705746; }
+
+.botoes-inferiores-direito {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.botoes-inferiores-direito div {
+    width: 110px;
+    height: 55px;
+    background-color: #222;
+    border-radius: 10px;
+    border: 5px solid #1f1f1f;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 900px) {
+    .container-apresentacao {
+        max-width: 780px;
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-apresentacao {
+        flex-direction: column;
+        height: auto;
+        max-height: none;
+    }
+    
+    .container-apresentacao::after {
+        display: none; 
+    }
+    
+    .visor-esquerdo {
+        height: 250px;
+    }
+    
+    .visor-esquerdo h1, .mensagem-introducao {
+        font-size: 1.5rem;
+    }
+}
+
+/* ESTILOS ESPECÍFICOS DO TIPO VOADOR */
+
+.titulo-voador {
+    font-size: 2.2rem;
+    color: #a890f0; 
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.descricao-tipo {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.info-batalha p {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.nota-rodape {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+    border-top: 2px solid #ccc;
+    padding-top: 10px;
+}
+
+/* PAGINA TIPO DARK */
+
+.titulo-dark {
+    font-size: 2.2rem;
+    color: #a29288;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 #000;
+}
+
+/* PAGINA TIPO ELÉTRICO */
+
+.titulo-eletrico {
+    font-size: 2.2rem;
+    color: #f7d02c; 
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 #000;
+}
+
+/* PAGINA TIPO DRAGÃO */
+ 
+.titulo-dragao {
+    font-size: 2.2rem;
+    color: #7038f8; 
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.btn-verde-grande {
+    width: 140px; 
+    height: 50px;
+    background-color: var(--pokedex-green-btn);
+    border-radius: 15px;
+    border: 5px solid var(--pokedex-frame-black);
+}
+
+/*POSIÇÂO DOS POKEMONS NA POKE-DEX PRO */
+
+.pokemon-list-item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 5px;
+    margin-bottom: 8px;
+    cursor: pointer; 
+    transition: all 0.2s ease;
+}
+
+.pokemon-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: #fff;
+}
+
+.list-thumb {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: #333;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.list-info h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: #f0f0f0;
+    text-transform: capitalize;
+}
+
+.list-info small {
+    color: #ccc;
+    font-size: 0.8rem;
+}
+
+.visor-esquerdo ul {
+    padding: 0;
+    width: 100%;
+}
+
+.type-badge-small {
+    display: inline-block;
+    padding: 2px 6px;
+    margin-right: 4px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: white;
+    text-shadow: 1px 1px 0 #000;
+    font-weight: bold;
+}

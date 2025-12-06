@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poke-Dex Pro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/img/pokebola.png" type="image/x-icon">
+</head>
+<body class="page-eletrico">
+
+    <div class="container-apresentacao">
+        
+        <div class="main-header">
+            <div class="visor-esquerdo" style="padding: 0; display: flex; align-items: center; justify-content: center; position: relative;">
+                
+                <p id="loading-texto" style="color: #ccc; position: absolute; z-index: 1;">Carregando...</p>
+                
+                <img id="pokemon-imagem-principal" src="" alt="" style="width: 90%; height: 90%; object-fit: contain; z-index: 2; display: none;">
+
+                <a href="introducao.html" class="btn-start-visivel">Voltar</a>
+            </div>
+            
+            <div class="controles-esquerdo">
+                <div class="d-pad"></div>
+                <button id="btn-verde-grande" class="btn-verde-grande">TROCAR</button>
+            </div>
+        </div>
+        
+        <section class="apresentacao-grupo">
+            <div class="visor-direito-conteudo">
+                <p class="subtitle-display" id="detalhe-titulo" style="font-size: 1.4rem;">Aguardando...</p>
+                
+                <div id="detalhes-container" style="display: none;">
+                    
+                    <div class="info-batalha" style="text-align: left; margin-top: 20px;">
+                         <p><strong>Tipos:</strong> <span id="detalhe-tipos"></span></p>
+                         <p><strong>Altura:</strong> <span id="detalhe-altura"></span> m</p>
+                         <p><strong>Peso:</strong> <span id="detalhe-peso"></span> kg</p>
+                         <p style="margin-top: 10px;"><strong>Habilidades:</strong><br> <span id="detalhe-habilidades" style="font-size: 0.9em;"></span></p>
+                    </div>
+
+                    <div style="margin-top: 30px;">
+                        <p class="subtitle-display" style="font-size: 1em; margin-bottom: 10px; border-bottom: 2px solid #ccc;">Status Base</p>
+                        
+                        <div style="display: flex; align-items: center; margin-bottom: 10px; font-size: 0.9em;">
+                            <strong style="width: 50px;">ATK:</strong>
+                            <span id="val-atk" style="width: 30px; text-align: right; margin-right: 10px;">0</span>
+                            <div style="flex: 1; background: #ddd; height: 15px; border-radius: 10px; overflow: hidden; border: 2px solid #555;">
+                                <div id="bar-atk" style="width: 0%; height: 100%; background: #ff5555; transition: width 0.5s;"></div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; margin-bottom: 10px; font-size: 0.9em;">
+                            <strong style="width: 50px;">DEF:</strong>
+                            <span id="val-def" style="width: 30px; text-align: right; margin-right: 10px;">0</span>
+                            <div style="flex: 1; background: #ddd; height: 15px; border-radius: 10px; overflow: hidden; border: 2px solid #555;">
+                                <div id="bar-def" style="width: 0%; height: 100%; background: #5555ff; transition: width 0.5s;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="botoes-inferiores-direito">
+                <div></div>
+                <div></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="assets/js/eletrico.js"></script>
+    <script>
+        if(typeof carregarPokemonPorTipo === 'function') {
+            carregarPokemonPorTipo('electric');
+        }
+    </script>
+</body>
+</html>
