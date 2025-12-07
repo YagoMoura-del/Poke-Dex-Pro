@@ -1,4 +1,3 @@
-// Botão Trocar
 const btnVerdeGrande = document.getElementById("btn-verde-grande");
 
 const loadingTexto = document.getElementById("loading-texto");
@@ -33,8 +32,8 @@ const meusPokemons = [
   "Dragonite", 
   "Haxorus", 
   "Hydreigon", 
-  "Drudigon", 
-  "Zygarde", 
+  "Goodra", 
+  "Garchomp", 
   "Rayquaza"
 ];
 
@@ -59,7 +58,6 @@ if (btnVerdeGrande) {
 }
 
 async function mostrarPokemonAtual() {
-    // 1. Prepara as telas (mostra carregando)
     loadingTexto.style.display = "block";
     imgPrincipal.style.display = "none";
     detalhesContainer.style.display = "none";
@@ -107,7 +105,6 @@ function atualizarTelas(dados) {
     
     valAtk.innerText = ataque;
     barAtk.style.width = `${Math.min((ataque / 150) * 100, 100)}%`; 
-    
     valDef.innerText = defesa;
     barDef.style.width = `${Math.min((defesa / 150) * 100, 100)}%`;
 }
