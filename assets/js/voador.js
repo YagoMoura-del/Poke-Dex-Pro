@@ -32,7 +32,7 @@ const meusPokemons = [
   "Spearow", 
   "Altaria", 
   "Rowlet", 
-  "Tornadus", 
+  "Starly", 
   "Emolga", 
   "Swanna", 
   "Pelipper"
@@ -111,3 +111,4 @@ function atualizarTelas(dados) {
     barDef.style.width = `${Math.min((defesa / 150) * 100, 100)}%`;
 
 }
+
