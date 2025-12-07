@@ -59,7 +59,6 @@ if (btnVerdeGrande) {
 }
 
 async function mostrarPokemonAtual() {
-    // 1. Prepara as telas (mostra carregando)
     loadingTexto.style.display = "block";
     imgPrincipal.style.display = "none";
     detalhesContainer.style.display = "none";
@@ -110,4 +109,5 @@ function atualizarTelas(dados) {
     
     valDef.innerText = defesa;
     barDef.style.width = `${Math.min((defesa / 150) * 100, 100)}%`;
+
 }
