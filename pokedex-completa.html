@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poke-Dex Pro</title>
+    <title>Pokédex Geral - Poke-Dex Pro</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="shortcut icon" href="assets/img/pokebola.png" type="image/x-icon">
 </head>
 <body class="page-geral">
 
@@ -29,18 +28,22 @@
         <section class="apresentacao-grupo">
             <div class="visor-direito-conteudo">
                 
-                <p class="subtitle-display" id="detalhe-titulo" style="font-size: 1.4rem;">Iniciando...</p>
+                <div class="search-box">
+                    <input type="text" id="input-search" placeholder="Nome ou Número...">
+                    <button id="btn-search">Buscar</button>
+                </div>
+                <p class="subtitle-display" id="detalhe-titulo" style="font-size: 1.4rem; margin-top: 10px;">Iniciando...</p>
                 
                 <div id="detalhes-container" style="display: none;">
                     
-                    <div style="margin-top: 20px; font-size: 1.1em; text-align: left;">
+                    <div style="margin-top: 10px; font-size: 1.1em; text-align: left;">
                          <p><strong>Tipos:</strong> <span id="detalhe-tipos"></span></p>
                          <p><strong>Altura:</strong> <span id="detalhe-altura"></span> m</p>
                          <p><strong>Peso:</strong> <span id="detalhe-peso"></span> kg</p>
                          <p><strong>Habilidades:</strong> <span id="detalhe-habilidades"></span></p>
                     </div>
 
-                    <div style="margin-top: 30px;">
+                    <div style="margin-top: 20px;">
                         <p class="subtitle-display" style="font-size: 1em; margin-bottom: 10px; border-bottom: 2px solid #ccc;">Status Base</p>
                         
                         <div style="display: flex; align-items: center; margin-bottom: 10px; font-size: 0.9em;">
@@ -59,7 +62,7 @@
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
             </div>
 
             <div class="botoes-inferiores-direito">
