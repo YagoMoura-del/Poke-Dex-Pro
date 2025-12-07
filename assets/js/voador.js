@@ -1,4 +1,3 @@
-// Botão Trocar
 const btnVerdeGrande = document.getElementById("btn-verde-grande");
 
 const loadingTexto = document.getElementById("loading-texto");
@@ -106,9 +105,6 @@ function atualizarTelas(dados) {
     
     valAtk.innerText = ataque;
     barAtk.style.width = `${Math.min((ataque / 150) * 100, 100)}%`; 
-    
     valDef.innerText = defesa;
     barDef.style.width = `${Math.min((defesa / 150) * 100, 100)}%`;
-
 }
-
